@@ -1,0 +1,670 @@
+*{
+   padding: 0; 
+   margin: 0;
+   box-sizing: border-box;
+   margin-left: 0;
+}
+
+.body{
+    background-color:rgb(18, 9, 59);
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    min-width:100%;
+    overflow-x: hidden;
+}
+
+
+/** navbar **/
+nav{
+    background-color: rgb(9, 9, 21);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 21000;
+}
+
+
+nav ul{
+display: flex;
+justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 23px;
+    font-size: 1.1rem;
+    padding: 2px;
+}
+nav ul li a{
+ text-decoration: none;
+ color: aliceblue;
+
+}
+
+nav ul li a:hover {
+ text-decoration: none;
+ color: rgb(153, 153, 255);
+ font-size: 1.08rem;
+ text-decoration: underline;
+ text-underline-offset: 8px;
+
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+/** Home **/
+
+#home{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 22vmin;
+   align-items: center;
+   min-width: 100vw;
+   height: auto;
+   min-height: 40vh;
+   
+}
+
+
+#home h5{
+    color: rgb(206, 217, 227);
+}
+
+
+.intro-home{
+   width: 65%;
+   min-height: 80%;
+   padding: 1vmin 8vmin;
+   padding-top: 2vmin;
+   font-size: clamp(2rem, 6vw, 4rem);
+}
+
+
+.intro-home button{
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.767);
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 50px;
+    cursor: pointer;
+    
+}
+
+.intro-home button a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+.intro-home h1{
+    font-size: 3rem;
+}
+
+
+.intro-home p{
+    font-size: 0.8rem;
+}
+
+.highlight-span{
+   color: rgb(119, 3, 227);
+}
+
+.social-logo{
+    
+    display: flex;
+    margin-top: 50px;
+    gap: 20px;
+    align-items: center;
+    margin-right: 100px;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+}
+
+
+#logo-box{
+  width: 35%; 
+  min-height: 80%;
+  padding-bottom: 1rem;
+}
+
+
+#logo-box img{
+     background-size: cover;
+     width: 80%;
+     height: 80%;
+     border-radius: 50%;  
+     background-color: rgb(39, 136, 196);
+     transition: all;
+ 
+}
+
+
+
+/** About us **/
+
+#about{
+    min-height: 400px;
+    height: auto;
+    background-color: rgb(15, 15, 59);
+    margin-top: 60px;
+    display: flex;
+
+}
+
+
+
+#About-me{
+    width: 40%;
+    height: 100%;
+    margin: 0 5rem;
+    
+    
+}
+
+#About-me h2{ 
+font-size: 2rem;
+ margin-top: 20px;
+}
+
+#About-me p{
+    font-size: 1.2rem;
+}
+
+#About-me button{
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    background-color: rgb(122, 21, 216);
+    border-radius: 4px;
+    color: azure;
+    border: none;
+    margin: 20px 0;
+}
+
+.hidden{
+   display: none;
+}
+
+.show{
+   display: inline;
+}
+
+
+#about-contact{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+}
+
+#about-contact div{
+    background-color: rgba(33, 13, 56, 0.897);
+    color: aliceblue;
+    width: 45%;
+    height: 20%;
+    margin-top: 20px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  
+}
+
+#about-contact div:hover{
+    transform: scale(1.1);
+    background-color: rgb(122, 21, 216);
+
+}
+
+
+.highlight-logo{
+   font-size: 2rem;
+  margin-right: 20px;
+}
+
+
+.son-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+/* my skills */
+
+#skills{
+    background-color: rgb(0, 0, 0);
+    height: 290px;
+    color: rgb(255, 255, 255);
+}
+
+#skills h2{
+    margin-left: 4rem;
+    padding-top: 20px;
+    font-size: 2rem;
+}
+
+
+
+#skills .logo-box{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+
+}
+
+
+#skills #main-box .logo-box .logo {
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    
+}
+
+#skills #main-box .logo-box .logo i{
+    font-size: 5rem;
+    color: rgb(110, 9, 187);
+    transition: all 0.3s ease-in-out;
+
+    
+}
+
+
+#skills .logo li{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 1rem;
+    padding-top: 10px;
+}
+
+
+
+
+
+.hr-line{ 
+    display: flex;
+    justify-content: space-evenly;
+     
+ }
+
+
+.hr-line hr{
+    margin-top: 5vh;
+    width: 8%;
+    border: 2px solid rgb(110, 9, 187);
+}
+    
+#skills #main-box .logo-box .logo :hover{
+    transform: scale(1.1);
+}
+
+
+/* My projects */
+
+#projects{
+    min-height: 57vh;
+    height: auto;
+    width: 100%;
+    background-color: rgb(15, 15, 59);
+}
+
+
+
+#projects .project-head{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#projects .project-head button{
+    border: 1px solid rgba(255, 255, 255, 0.667);
+    background-color:  rgb(15, 15, 59);
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 1rem;
+    margin: 2vh 4vh;
+    cursor: pointer;
+}
+
+#projects .project-head h1{
+   margin: 2vh 4vh;
+}
+
+#projects .project-div{
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+}
+
+#projects .hidden-box{
+    display: none;
+   
+}
+
+#projects .hidden-box.show {
+     height: 42vmin;
+    width: 30%;
+    background-color: black;
+    margin: 10px;
+    border-radius: 20px;
+    display: block;
+}
+
+#projects .project-box{
+    height: 42vmin;
+    width: 30%;
+    background-color: black;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.image-div img{
+    height: 21vmin;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-size: cover;
+}
+
+.text-div{
+    padding: 0.4rem 0.8rem;
+    transform: scale(1.15);
+    transform-origin: left ;
+}
+
+ .text-div p{
+    color: rgba(240, 248, 255, 0.758);
+     margin: 1vh 0;
+}
+
+.text-div a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* educartion & experience */
+
+#education{
+      height: 50vh;
+      background-color: black;
+}
+#education h1{
+   padding: 1.6rem 2rem;
+
+}
+
+#hr-box{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 4rem;
+    margin-top: 0.5rem;
+}
+
+
+.hr-line-2{
+    width: 32%;
+    border: 1px solid rgb(138, 6, 214);
+    flex: 1;
+    height: 1px;
+    margin: 0;
+}
+
+.dot{
+    font-size: 60px;
+    font-weight: bold;
+    color: blueviolet;
+    top: -45px;
+    position: relative;
+}
+
+.vr-line{
+    border-left: 2px dotted blueviolet;
+    margin-top: 8px;
+    right: 13px;
+    position: relative;
+    height: 25vh;
+
+}
+
+
+.vr-curve{
+    height: 6vh;
+    width: 20px;
+    border-left: 2px dotted blueviolet;
+    border-top-left-radius: 20px;
+    right: 39px;
+    position: relative;
+}
+
+
+.vr-curve-2{
+    height: 6vh;
+    width: 20px;
+    border-right: 2px dotted blueviolet;
+    border-top-right-radius: 20px;
+    left: -14px;
+    position: relative;
+}
+
+.edu-info{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: -9rem;
+  font-size: clamp(10px, 1.4vw, 20px);
+}
+
+.edu-info .info-box p{
+    color: rgba(240, 248, 255, 0.708);
+}
+
+.edu-info .info-box h2{
+    padding: 10px 0;
+}
+
+
+
+/* contact / footer */
+
+#contact{
+    min-height: 30vh;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(18, 18, 58, 0.904);
+}
+
+#contact .cont-div{
+    margin-top: 5vh;
+
+}
+
+.cont-div .cont-logo{
+    font-size: 2.5rem;
+}
+
+.cont-div h2{
+    padding-bottom: 10px;
+}
+
+
+#contact .cont-div #cont-logo{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#contact .cont-div a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#contact .cont-div li{
+    margin-left: 20px;
+}
+
+#cont{
+    display: grid;
+    grid-template-columns: 1em 1em;
+    row-gap: 1rem;
+    font-size: 1.2rem;
+   
+}
+
+#cont span{
+    font-size: 1.5rem;
+    margin-left: 12rem;
+}
+
+/* Footer */
+
+footer{
+    height: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.685);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: rgba(240, 248, 255, 0.63);
+    margin-bottom: 0;
+}
+
+
+
+@media (max-width:776px){
+
+nav{
+  display: none;
+}
+
+#home{
+    flex-direction:column;
+    text-align:center;
+}
+
+.intro-home{
+    width:90%;
+    padding:20px;
+    transform:none;
+}
+
+#logo-box{
+    width:80%;
+}
+
+#about{
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+}
+
+#About-me{
+    width:100%;
+    margin:0;
+}
+
+#about-contact{
+    width:100%;
+}
+
+#about-contact div{
+    width:100%;
+    height:80px;
+}
+
+#skills{
+    height:auto;
+    padding-bottom:20px;
+}
+
+#skills .logo-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    margin-top: 1rem;;
+    font-size: 1rem;
+    margin-left: 12%;
+
+}
+
+
+
+#skills #main-box h2{
+   margin-left: 30%;
+   
+}
+
+#skills .logo-box .logo li{
+    display: none;
+}
+
+
+.hr-line{
+    display: none;
+}
+
+#projects{
+    height:auto;
+}
+
+.project-div{
+    flex-direction:column;
+    align-items:center;
+}
+
+.project-box,
+.hidden-box.show{
+    width:90% !important;
+    height:auto !important;
+}
+
+#education{
+    height:auto;
+}
+
+.edu-info{
+    flex-direction:column;
+    margin: 0;
+    gap: 20px;
+    padding: 20px ;
+    }
+
+
+#hr-box{
+    display: none;
+}
+    
+
+#contact{
+    flex-direction:column;
+    height:auto;
+    padding:20px;
+}
+
+#cont span{
+    margin-left:0;
+}
+
+}
