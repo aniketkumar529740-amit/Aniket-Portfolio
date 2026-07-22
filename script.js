@@ -36,3 +36,27 @@ button.addEventListener("click", () =>{
 
 });
 
+
+// scroll button
+
+const scrollbtn = document.querySelector("#scroll-btn");
+
+window.addEventListener("scroll",() => {
+    if(window.scrollY > 200){
+        scrollbtn.style.display = "block";
+    } else{
+        scrollbtn.style.display = "none";
+    }
+});
+
+scrollbtn.addEventListener("click", () => {
+    window.scrollTo({
+        top:0,
+        behaviour: "smooth"
+    })
+})
+
+
+
+
+
