@@ -1,62 +1,254 @@
-/** About More Text  */
+// =========================
+// DARK / LIGHT MODE
+// =========================
 
-let btn = document.querySelector("#read-more");
-let moretext = document.querySelector("#moretext");
+const themeToggle = document.getElementById("theme-toggle");
 
+const savedTheme = localStorage.getItem("theme");
 
+if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
 
-btn.addEventListener("click", () => {
- moretext.classList.toggle("show");
+    themeToggle.innerHTML =
+        '<i class="fa-solid fa-sun"></i>';
+}
 
- if(moretext.classList.contains("show")){
- btn.innerText = "read less";
- }
- else{
-  btn.innerText = "read more";
- }
-}) ;
+themeToggle.addEventListener("click", () => {
 
+    document.body.classList.toggle("light-mode");
 
-// view more projects 
+    const isLight =
+        document.body.classList.contains("light-mode");
 
-let button = document.querySelector("#more-projects");
-let project = document.querySelectorAll(".hidden-box");
+    if (isLight) {
 
-button.addEventListener("click", () =>{
+        localStorage.setItem("theme", "light");
 
-    project.forEach((eachproject) => {
-    eachproject.classList.toggle("show")
-    })
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
 
+    } else {
 
-    if(project[0].classList.contains("show")){
-    button.innerText = "View less Projects"}
-    else{
-        button.innerText = "View All Projects" }
+        localStorage.setItem("theme", "dark");
 
-});
-
-
-// scroll button
-
-const scrollbtn = document.querySelector("#scroll-btn");
-
-window.addEventListener("scroll",() => {
-    if(window.scrollY > 200){
-        scrollbtn.style.display = "block";
-    } else{
-        scrollbtn.style.display = "none";
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-moon"></i>';
     }
+
 });
 
-scrollbtn.addEventListener("click", () => {
+
+
+// =========================
+// SCROLL TO TOP BUTTON
+// =========================
+
+const scrollTopBtn =
+    document.getElementById("scroll-top");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        scrollTopBtn.style.display = "block";
+
+    } else {
+
+        scrollTopBtn.style.display = "none";
+    }
+
+});
+
+scrollTopBtn.addEventListener("click", () => {
+
     window.scrollTo({
-        top:0,
-        behaviour: "smooth"
-    })
-})
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
 
 
 
+// =========================
+// ACTIVE NAV LINK
+// =========================
+
+const sections =
+    document.querySelectorAll("section");
+
+const navLinks =
+    document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+        const sectionHeight =
+            section.clientHeight;
+
+        if (
+            window.scrollY >= sectionTop
+            &&
+            window.scrollY <
+            sectionTop + sectionHeight
+        ) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href")
+            === `#${current}`
+        ) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
 
 
+
+// =========================
+// SMOOTH NAVIGATION
+// =========================
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const targetId =
+            link.getAttribute("href");
+
+        const targetSection =
+            document.querySelector(targetId);
+
+        targetSection.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
+
+const revealElements =
+    document.querySelectorAll(
+        ".project-card, .skill-card, .stat-box, .timeline-item, .contact-card, .info-card"
+    );
+
+function revealOnScroll() {
+
+    revealElements.forEach(element => {
+
+        const windowHeight =
+            window.innerHeight;
+
+        const elementTop =
+            element.getBoundingClientRect().top;
+
+        const revealPoint = 100;
+
+        if (
+            elementTop <
+            windowHeight - revealPoint
+        ) {
+
+            element.style.opacity = "1";
+
+            element.style.transform =
+                "translateY(0px)";
+
+        }
+
+    });
+
+}
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(40px)";
+
+    element.style.transition =
+        "all 0.6s ease";
+
+});
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+revealOnScroll();
+
+
+
+// =========================
+// PAGE LOAD ANIMATION
+// =========================
+
+window.addEventListener("load", () => {
+
+    document.body.style.opacity = "1";
+
+});
+
+
+
+// =========================
+// CONTACT FORM
+// =========================
+
+const contactForm =
+    document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        (e) => {
+
+            e.preventDefault();
+
+            alert(
+                "Thank you! Your message has been submitted."
+            );
+
+            contactForm.reset();
+
+        }
+    );
+
+}
+
+
+
+// =========================
+// CONSOLE BRANDING
+// =========================
+
+console.log(
+    "%cPortfolio Developed By Aniket Singh",
+    "color:#7c3aed;font-size:16px;font-weight:bold;"
+);
